@@ -5,10 +5,8 @@ detects bearing wear patterns and triggers maintenance alerts
 before catastrophic failure occurs.
 
 ## 📽️ Live Simulation
-[
 
-![Open in Wokwi](https://wokwi.com/projects/468105767087446017)
-]
+https://wokwi.com/projects/468105767087446017
 
 ## 🔧 Hardware Components
 | Component | Purpose |
