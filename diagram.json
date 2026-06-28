@@ -1,0 +1,108 @@
+{
+  "version": 1,
+  "author": "Tarak",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 298.2, "left": 297, "attrs": {} },
+    {
+      "type": "wokwi-potentiometer",
+      "id": "pot1",
+      "top": 37.1,
+      "left": 163,
+      "attrs": { "label": "Vibration Sensor" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 180,
+      "left": 360,
+      "rotate": 90,
+      "attrs": { "value": "220", "label": "R_Green" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_green",
+      "top": 80,
+      "left": 360,
+      "attrs": { "color": "green", "label": "Normal" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 180,
+      "left": 450,
+      "rotate": 90,
+      "attrs": { "value": "220", "label": "R_Yellow" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_yellow",
+      "top": 80,
+      "left": 450,
+      "attrs": { "color": "yellow", "label": "Warning" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r3",
+      "top": 196.8,
+      "left": 575.45,
+      "rotate": 90,
+      "attrs": { "value": "220", "label": "R_Red" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led_red",
+      "top": 80,
+      "left": 540,
+      "attrs": { "color": "red", "label": "Critical" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 80,
+      "left": 650,
+      "attrs": { "label": "Alert Buzzer" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 380.6,
+      "left": 76.8,
+      "attrs": { "label": "Reset Button", "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r4",
+      "top": 648,
+      "left": 66.65,
+      "rotate": 90,
+      "attrs": { "value": "10000", "label": "Pull-down 10k" }
+    }
+  ],
+  "connections": [
+    [ "pot1:VCC", "uno:5V", "red", [ "h-0.8", "v441.6", "h248.8" ] ],
+    [ "pot1:SIG", "uno:A0", "green", [ "v172.8", "h-0.4", "v240", "h303.4" ] ],
+    [ "pot1:GND", "uno:GND.1", "black", [ "v182.4", "h223.5" ] ],
+    [ "uno:6", "r1:1", "orange", [ "v-40.2", "h-152.9", "v-112.8" ] ],
+    [ "r1:2", "led_green:A", "orange", [ "h0" ] ],
+    [ "led_green:K", "uno:GND.2", "black", [ "h0" ] ],
+    [ "uno:7", "r2:1", "yellow", [ "h0" ] ],
+    [ "r2:2", "led_yellow:A", "yellow", [ "h0" ] ],
+    [ "led_yellow:K", "uno:GND.3", "black", [ "h0" ] ],
+    [ "uno:8", "r3:1", "red", [ "v-48", "h134.8" ] ],
+    [ "r3:2", "led_red:A", "red", [ "h0" ] ],
+    [ "led_red:K", "uno:GND.4", "black", [ "h0" ] ],
+    [ "uno:9", "bz1:1", "purple", [ "v-30.6", "h214" ] ],
+    [ "bz1:2", "uno:GND.5", "black", [ "h0" ] ],
+    [ "uno:5V", "btn1:1.l", "red", [ "v47.9", "h-377" ] ],
+    [ "btn1:2.l", "uno:2", "blue", [ "v61.2", "h-41.6", "v-393.6", "h495.1" ] ],
+    [ "uno:2", "r4:1", "blue", [ "v-76.8", "h-514.3", "v393.6" ] ],
+    [ "r4:2", "uno:GND.6", "black", [ "h0" ] ],
+    [ "uno:GND.1", "led_green:C", "black", [ "v0" ] ],
+    [ "uno:GND.1", "led_yellow:C", "black", [ "v0" ] ],
+    [ "uno:GND.1", "led_red:C", "black", [ "v0" ] ],
+    [ "uno:GND.2", "r4:2", "black", [ "v0" ] ],
+    [ "bz1:2", "uno:GND.1", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
